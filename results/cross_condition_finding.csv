@@ -1,0 +1,2 @@
+shared_features,condition_specific_features,top_parkinsons,top_respiratory,top_stress,top_depression
+"['hnr', 'jitter', 'mfcc_5', 'mfcc_9', 'mfcc_8', 'mfcc_7', 'mfcc_13', 'mfcc_3', 'mfcc_4', 'mfcc_12', 'mfcc_11', 'spectral_centroid', 'pitch']","['mfcc_1', 'shimmer', 'zcr', 'mfcc_6', 'mfcc_10', 'mfcc_2']",pitch,shimmer,mfcc_1,hnr

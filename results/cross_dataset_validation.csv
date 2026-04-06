@@ -1,0 +1,2 @@
+within_dataset_acc,within_dataset_auc,cross_dataset_acc,cross_dataset_auc,acc_drop,auc_drop
+0.8871794871794872,0.9493614303959133,1.0,1.0,-0.11282051282051275,-0.05063856960408675

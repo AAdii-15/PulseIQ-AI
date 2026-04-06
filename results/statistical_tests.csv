@@ -1,0 +1,9 @@
+baseline,b,c,chi2,p_value,significant,disease
+SVM (RBF),11,9,0.05,0.8230632737581214,False,Parkinson's
+Logistic Regression,18,7,4.0,0.045500263896358445,True,Parkinson's
+SVM (RBF),358,357,0.0,1.0,False,Respiratory
+Logistic Regression,655,367,80.5958904109589,2.7693482127084433e-19,True,Respiratory
+SVM (RBF),39,33,0.3472222222222222,0.5556897902827946,False,Stress
+Logistic Regression,83,47,9.423076923076923,0.002142716851285221,True,Stress
+SVM (RBF),53,71,2.3306451612903225,0.1268492940151455,False,Depression
+Logistic Regression,140,75,19.051162790697674,1.2726020673954193e-05,True,Depression
