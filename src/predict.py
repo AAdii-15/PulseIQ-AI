@@ -5,6 +5,7 @@ import sys
 import os
 import joblib
 import pandas as pd
+import numpy as np
 import shap
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -40,6 +41,17 @@ pk_explainer     = shap.TreeExplainer(pk_model)
 resp_explainer   = shap.TreeExplainer(resp_model)
 stress_explainer = shap.TreeExplainer(stress_model)
 depr_explainer   = shap.TreeExplainer(depr_model)
+
+# ── SHAP Version Helper ──────────────────────────────────────────────
+def get_shap_vals(shap_output):
+    if isinstance(shap_output, list):
+        return shap_output[1][0] if len(shap_output) > 1 else shap_output[0][0]
+    elif hasattr(shap_output, 'ndim'):
+        if shap_output.ndim == 3:
+            return shap_output[0, :, 1]
+        else:
+            return shap_output[0]
+    return shap_output[0]
 
 # ── Helpers ──────────────────────────────────────────────────────────
 def separator(char="-", width=60):
@@ -87,7 +99,7 @@ def predict_all(audio_path):
     pk_imp_df = pd.DataFrame(pk_imp, columns=PK_FEATURES)
     pk_prob   = pk_model.predict_proba(pk_imp_df)[0][1]
     pk_shap   = pk_explainer.shap_values(pk_imp_df)
-    pk_vals   = pk_shap[0, :, 1] if pk_shap.ndim == 3 else pk_shap[0]
+    pk_vals   = get_shap_vals(pk_shap)
 
     # ── Respiratory ──────────────────────────────────────────────────
     resp_input  = pd.DataFrame([features])[GENERAL_FEATURES]
@@ -95,7 +107,7 @@ def predict_all(audio_path):
     resp_imp_df = pd.DataFrame(resp_imp, columns=GENERAL_FEATURES)
     resp_prob   = resp_model.predict_proba(resp_imp_df)[0][1]
     resp_shap   = resp_explainer.shap_values(resp_imp_df)
-    resp_vals   = resp_shap[0, :, 1] if resp_shap.ndim == 3 else resp_shap[0]
+    resp_vals   = get_shap_vals(resp_shap)
 
     # ── Stress ───────────────────────────────────────────────────────
     stress_input  = pd.DataFrame([features])[GENERAL_FEATURES]
@@ -103,7 +115,7 @@ def predict_all(audio_path):
     stress_imp_df = pd.DataFrame(stress_imp, columns=GENERAL_FEATURES)
     stress_prob   = stress_model.predict_proba(stress_imp_df)[0][1]
     stress_shap   = stress_explainer.shap_values(stress_imp_df)
-    stress_vals   = stress_shap[0, :, 1] if stress_shap.ndim == 3 else stress_shap[0]
+    stress_vals   = get_shap_vals(stress_shap)
 
     # ── Depression ───────────────────────────────────────────────────
     depr_input  = pd.DataFrame([features])[GENERAL_FEATURES]
@@ -111,7 +123,7 @@ def predict_all(audio_path):
     depr_imp_df = pd.DataFrame(depr_imp, columns=GENERAL_FEATURES)
     depr_prob   = depr_model.predict_proba(depr_imp_df)[0][1]
     depr_shap   = depr_explainer.shap_values(depr_imp_df)
-    depr_vals   = depr_shap[0, :, 1] if depr_shap.ndim == 3 else depr_shap[0]
+    depr_vals   = get_shap_vals(depr_shap)
 
     # ── Risk Bands ────────────────────────────────────────────────────
     pk_band,     pk_note     = risk_band(pk_prob)
@@ -121,14 +133,14 @@ def predict_all(audio_path):
 
     # ── Print Report ──────────────────────────────────────────────────
     separator("=")
-    print("  PULSEIQ AI  —  ACOUSTIC RISK ASSESSMENT REPORT")
+    print("  PULSEIQ AI  --  ACOUSTIC RISK ASSESSMENT REPORT")
     separator("=")
     print(f"  {'CONDITION':<30} {'RISK BAND':<12} {'SCORE':<10} {'MODEL AUROC'}")
     separator()
     print(f"  {'Parkinson Disease':<30} {pk_band:<12} {pk_prob:.1%}     0.949")
     print(f"  {'Respiratory Abnormality':<30} {resp_band:<12} {resp_prob:.1%}     0.748")
     print(f"  {'Psychological Stress':<30} {stress_band:<12} {stress_prob:.1%}     0.918")
-    print(f"  {'Depression Indicators':<30} {depr_band:<12} {depr_prob:.1%}     0.856")
+    print(f"  {'Depression Indicators':<30} {depr_band:<12} {depr_prob:.1%}     0.660")
     separator("=")
 
     # ── Acoustic Features ─────────────────────────────────────────────
@@ -178,10 +190,10 @@ def predict_all(audio_path):
     print()
 
     return {
-        "parkinsons":   {"probability": round(pk_prob, 4),     "band": pk_band.strip()},
-        "respiratory":  {"probability": round(resp_prob, 4),   "band": resp_band.strip()},
-        "stress":       {"probability": round(stress_prob, 4), "band": stress_band.strip()},
-        "depression":   {"probability": round(depr_prob, 4),   "band": depr_band.strip()}
+        "parkinsons":  {"probability": round(pk_prob, 4), "band": pk_band.strip()},
+        "respiratory": {"probability": round(resp_prob, 4), "band": resp_band.strip()},
+        "stress":      {"probability": round(stress_prob, 4), "band": stress_band.strip()},
+        "depression":  {"probability": round(depr_prob, 4), "band": depr_band.strip()}
     }
 
 

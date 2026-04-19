@@ -1,7 +1,28 @@
+# Virtual environment
 venv/
+env/
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# System
 .DS_Store
-*.joblib
 *.wav
-data/
+
+# Large raw data — too big for GitHub
+data/Coswara-Data/
+data/ravdess/
+data/daic_woz/
+
+# Keep these
+!data/voice_features/
+!data/parkinsons_tabular/
+
+# Zip files
+*.zip
+
+# Joblib cache
+*.joblib
