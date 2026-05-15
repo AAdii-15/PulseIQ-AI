@@ -39,22 +39,33 @@ consistent with, but not proof of, independent acoustic biomarker channels.*
 ---
 
 ## Key Results
-PD (LOSO, 6 nonlinear features):
-AUROC 0.802  BACC 0.660  F1 0.880  Brier 0.144  ECE 0.102
-DeLong: nonlinear-6 vs all-22  z=2.067, p=0.039*
-RF variance (10 seeds): 0.799 ± 0.007COVID-19 Respiratory (5-fold CV):
-AUROC 0.758  BACC 0.695  F1 0.667  Brier 0.202  ECE 0.063
-DeLong: RF vs LR  z=12.96, p<0.001***
-Duplication inflation ceiling: Δ ≤ 0.009 AUROCDepression — Exploratory Only:
-AUROC 0.634  p=0.110 (non-significant)
-AVEC 2017 official baseline: 0.630
-Bootstrap NL% = 2.51 ± 1.15, 95% CI [0.89, 5.25] — stableSHAP Stability:
-PD top-5 Jaccard = 1.000 (20 bootstraps)
-COVID-19 top-5 Jaccard = 1.000 (20 bootstraps)External Validation:
-UCI → Sakar AUROC = 0.535 ≈ chance
+
+**Parkinson's Disease** (LOSO, 6 nonlinear features)
+- AUROC: 0.802 · BACC: 0.660 · F1: 0.880 · Brier: 0.144 · ECE: 0.102
+- DeLong (nonlinear-6 vs all-22): z = 2.067, *p* = 0.039 \*
+- RF variance (10 seeds): 0.799 ± 0.007
+
+**COVID-19 Respiratory** (5-fold CV)
+- AUROC: 0.758 · BACC: 0.695 · F1: 0.667 · Brier: 0.202 · ECE: 0.063
+- DeLong (RF vs LR): z = 12.96, *p* < 0.001 \*\*\*
+- Duplication inflation ceiling: Δ ≤ 0.009 AUROC
+
+**Depression** — *Exploratory Only*
+- AUROC: 0.634, *p* = 0.110 (non-significant)
+- AVEC 2017 official baseline: 0.630
+- Bootstrap NL%: 2.51 ± 1.15, 95% CI [0.89, 5.25] — stable
+
+**SHAP Stability**
+- PD top-5 Jaccard = 1.000 (20 bootstraps)
+- COVID-19 top-5 Jaccard = 1.000 (20 bootstraps)
+
+**External Validation**
+- UCI → Sakar: AUROC = 0.535 ≈ chance
 ---
 
 ## Repository Structure
+
+```
 PulseIQ-AI/
 ├── src/
 │   ├── feature_extraction/
@@ -83,7 +94,7 @@ PulseIQ-AI/
 │   ├── respiratory_model.pkl            # COVID-19 RF
 │   ├── depression_best_model.pkl        # COVAREP + SVM (AUROC 0.634)
 │   ├── temporal_attention_model.pt      # BiLSTM attention
-│   └── phq8_*_regressor.pkl            # PHQ-8 symptom regressors (8 items)
+│   └── phq8_*_regressor.pkl             # PHQ-8 symptom regressors (8 items)
 ├── results/
 │   ├── metrics/                         # 31 result CSVs (fully reproducible)
 │   └── figures/                         # All paper figures (PNG)
@@ -95,7 +106,7 @@ PulseIQ-AI/
 ├── CITATION.cff                         # Citation metadata
 ├── LICENSE                              # MIT
 └── README.md                            # This file
----
+```
 
 ## Reproducibility
 
