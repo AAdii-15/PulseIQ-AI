@@ -1,0 +1,5 @@
+Condition,Model,Protocol,AUROC,95% CI,Sensitivity,Specificity,p
+Parkinson Disease,RF (6 nonlinear),LOSO (primary),0.802,[0.728-0.870],0.9456,0.3958,<0.001***
+Parkinson Disease,RF (all 22),5-Fold CV (secondary),0.9315,[0.901-0.958],0.9456,0.6875,<0.001***
+Respiratory Abnormality,RF,5-Fold CV,0.7577,[0.744-0.771],0.6331,0.7578,<0.001***
+Depression (DAIC-WOZ),SVM+SelectKBest,AVEC2017 Dev,0.6341,[0.300-0.705],0.917†,0.478†,0.110 ns

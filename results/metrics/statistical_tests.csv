@@ -1,0 +1,6 @@
+condition,comparison,mcnemar_p,sig
+parkinsons,RF vs Logistic Regression,0.0012,**
+parkinsons,RF vs SVM,0.1185,ns
+respiratory,RF vs Logistic Regression,0.0,***
+respiratory,RF vs SVM,0.2194,ns
+depression,SVM vs LR,0.5078,ns

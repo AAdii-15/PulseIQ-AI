@@ -1,0 +1,5 @@
+System,AUROC,Notes
+AVEC 2017 Baseline (Ringeval et al.),0.63,"COVAREP+SVM, official baseline"
+Al Hanai et al. 2018 (LSTM),0.77,"Audio+text LSTM, INTERSPEECH"
+Huang et al. 2024 (wav2vec)*,0.965,"*Non-standard split, not comparable"
+Our Model (COVAREP+SVM),0.6341,Official AVEC 2017 dev split

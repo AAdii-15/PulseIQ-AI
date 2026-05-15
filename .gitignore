@@ -1,0 +1,38 @@
+# Data
+data/raw/
+*.wav
+*.mp3
+*.flac
+
+# Models
+models/*.pkl
+models/*.pt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environments
+venv/
+.env
+
+# LaTeX
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+
+# OS
+.DS_Store
+*.swp
+data/features/wav2vec_temporal/
+*.npy
+data/features/wav2vec_temporal/
+*.npy
+data/features/wav2vec_temporal/
+*.npy
+data/features/wav2vec_temporal/
+*.npy

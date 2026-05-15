@@ -1,0 +1,2 @@
+model,protocol,auroc,ci_lo,ci_hi,permutation_p,significance
+wav2vec+BiLSTM+Attention,AVEC2017 Dev,0.587,0.368,0.792,0.21,ns

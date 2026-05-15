@@ -1,0 +1,11 @@
+feature,importance,condition
+HMPDM_6_std,0.000163,depression
+HMPDM_5_std,0.000162,depression
+HMPDD_5_mean,0.000162,depression
+HMPDD_12_std,0.000161,depression
+HMPDD_11_std,0.000161,depression
+HMPDD_2_mean,0.000159,depression
+HMPDD_4_mean,0.000158,depression
+HMPDD_3_mean,0.000158,depression
+HMPDM_7_std,0.000157,depression
+F0_mean,0.000155,depression

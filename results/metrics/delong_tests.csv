@@ -1,0 +1,4 @@
+condition,comparison,auc_a,auc_b,delong_z,delong_p,sig
+parkinsons,RF(nonlinear) vs LR,0.8041,0.8,0.15,0.8806,ns
+parkinsons,RF(nonlinear) vs RF(all-22),0.8041,0.7408,2.067,0.0387,*
+respiratory,RF vs LR,0.761,0.6863,12.963,0.0,***

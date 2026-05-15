@@ -1,0 +1,7 @@
+condition,top_k,jaccard_mean,jaccard_std,jaccard_min
+parkinsons,3,1.0,0.0,1.0
+parkinsons,5,1.0,0.0,1.0
+parkinsons,6,1.0,0.0,1.0
+respiratory,3,1.0,0.0,1.0
+respiratory,5,1.0,0.0,1.0
+respiratory,10,0.9182,0.0905,0.8182

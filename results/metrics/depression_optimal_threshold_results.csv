@@ -1,0 +1,2 @@
+condition,model,protocol,threshold_type,threshold_value,auroc,accuracy,sensitivity,specificity,precision,f1,note
+depression,COVAREP+SVM,AVEC2017 Official Dev Set,ROC-Optimal (Youden J),0.2744,0.6341,0.6286,0.9167,0.4783,0.4783,0.6286,Threshold selected via Youden J on dev set

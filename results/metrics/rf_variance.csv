@@ -1,0 +1,3 @@
+condition,mean,std,min,max
+parkinsons,0.7989,0.0065,0.7892,0.8114
+respiratory,0.7574,0.001,0.7556,0.759

@@ -1,0 +1,16 @@
+condition,protocol,model,accuracy,auroc,auroc_ci_lo,auroc_ci_hi,sensitivity,specificity,mcnemar_p_vs_rf
+parkinsons,LOSO,Logistic Regression,0.6974,0.7238,0.6371,0.801,0.7619,0.5,0.0012
+parkinsons,LOSO,Decision Tree,0.7487,0.5956,0.5302,0.6652,0.8844,0.3333,0.0129
+parkinsons,LOSO,SVM (RBF),0.7641,0.6473,0.5519,0.7366,0.8844,0.3958,0.1185
+parkinsons,LOSO,KNN,0.7487,0.7279,0.6435,0.8043,0.8912,0.3125,0.0309
+parkinsons,LOSO,Random Forest,0.8,0.7446,0.671,0.8133,0.9456,0.3542,
+respiratory,5-Fold CV,Logistic Regression,0.6388,0.6863,0.6728,0.6996,0.6435,0.6345,0.0
+respiratory,5-Fold CV,Decision Tree,0.5972,0.6402,0.6253,0.6554,0.6152,0.5807,0.0
+respiratory,5-Fold CV,SVM (RBF),0.6911,0.7534,0.7403,0.7661,0.6411,0.7369,0.2194
+respiratory,5-Fold CV,KNN,0.677,0.7309,0.718,0.7434,0.6631,0.6897,0.0029
+respiratory,5-Fold CV,Random Forest,0.6976,0.7577,0.7442,0.7707,0.6319,0.7578,
+depression,AVEC2017 Dev,Logistic Regression,0.5714,0.4674,0.2816,0.6821,0.25,0.7391,0.7266
+depression,AVEC2017 Dev,Decision Tree,0.5143,0.5,0.2981,0.7088,0.3333,0.6087,0.424
+depression,AVEC2017 Dev,SVM (RBF),0.6571,0.5254,0.3288,0.7252,0.0,1.0,1.0
+depression,AVEC2017 Dev,KNN,0.6,0.5163,0.3611,0.6999,0.0,0.913,1.0
+depression,AVEC2017 Dev,Random Forest,0.6286,0.3678,0.1755,0.5647,0.0,0.9565,

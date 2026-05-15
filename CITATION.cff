@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or paper, please cite as below."
+type: software
+title: "PulseIQ AI — Condition-Specific Acoustic Feature Attribution Across Parallel Voice Screening Tasks"
+authors:
+  - family-names: Raj
+    given-names: Aditya
+    affiliation: Bennett University, Greater Noida, India
+    email: adityarajdhuria@gmail.com
+  - family-names: Kumar
+    given-names: Prashant
+    affiliation: Bennett University, Greater Noida, India
+year: 2025
+url: "https://github.com/AAdii-15/pulseiq-ai"
+keywords:
+  - voice biomarkers
+  - Parkinson's disease
+  - COVID-19
+  - depression
+  - SHAP explainability
+  - COVAREP
+license: MIT

@@ -1,0 +1,24 @@
+condition,ablation,auroc,drop_from_baseline
+parkinsons,All features (baseline),0.7446,0.0
+parkinsons,w/o Jitter,0.7437,-0.0009
+parkinsons,w/o Shimmer,0.7817,0.0371
+parkinsons,w/o HNR/NHR,0.7652,0.0206
+parkinsons,"w/o Nonlinear (RPDE,DFA,PPE,spread,D2)",0.6551,-0.0895
+parkinsons,"w/o Pitch (Fo,Fhi,Flo)",0.732,-0.0126
+parkinsons,Jitter only,0.6008,-0.1438
+parkinsons,Nonlinear only,0.81,0.0654
+respiratory,All features (baseline),0.7577,0.0
+respiratory,w/o MFCCs (13 coefficients),0.653,-0.1047
+respiratory,"w/o Prosodic (pitch,SC,ZCR)",0.7511,-0.0066
+respiratory,"w/o Voice Quality (jitter,shimmer,HNR)",0.7432,-0.0145
+respiratory,MFCCs only,0.732,-0.0257
+respiratory,Prosodic only,0.5657,-0.192
+respiratory,Voice Quality only,0.5906,-0.1671
+respiratory,Prosodic + Voice Quality (no MFCC),0.653,-0.1047
+depression,All features (baseline),0.6051,0.0
+depression,w/o F0/VUV (speaking rate),0.6087,0.0036
+depression,w/o MCEP (spectral envelope),0.4493,-0.1558
+depression,w/o HMPDM (phase distortion mean),0.4746,-0.1305
+depression,w/o HMPDD (phase distortion dev),0.5399,-0.0652
+depression,"w/o Clinical (NAQ,QOQ,H1H2...)",0.4022,-0.2029
+depression,MCEP only,0.4493,-0.1558

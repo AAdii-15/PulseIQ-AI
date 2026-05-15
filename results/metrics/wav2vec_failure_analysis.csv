@@ -1,0 +1,4 @@
+factor,wav2vec,covarep,impact
+Dimensionality mismatch,768 dims / 107 samples = 0.14 ratio,146 dims / 107 samples = 0.73 ratio,Severe curse of dimensionality for wav2vec
+Domain mismatch,Pre-trained on LibriSpeech (read speech),Designed for clinical voice analysis [R18],wav2vec representations not clinically calibrated
+Temporal information loss,Mean-pool over 30s chunks destroys sequence,"All-frame statistics capture VUV rate, F0 variability",Depression temporal markers lost in wav2vec

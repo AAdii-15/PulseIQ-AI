@@ -1,0 +1,12 @@
+group,n_feat,auroc,sensitivity,specificity
+Nonlinear only (6),6,0.802,0.9456,0.3958
+Nonlinear + Pitch (9),9,0.7959,0.9592,0.375
+Nonlinear + Jitter (11),11,0.7852,0.9184,0.3958
+Nonlinear + Shimmer (12),12,0.7708,0.9184,0.375
+Nonlinear + HNR (8),8,0.7698,0.9184,0.3542
+Nonlinear + Pitch + HNR (11),11,0.7641,0.9592,0.3542
+All 22 features,22,0.7396,0.9388,0.3542
+Shimmer only (6),6,0.6962,0.8844,0.2083
+Pitch only (3),3,0.618,0.9252,0.2708
+Jitter only (5),5,0.599,0.8844,0.3958
+HNR/NHR only (2),2,0.4979,0.8639,0.2292

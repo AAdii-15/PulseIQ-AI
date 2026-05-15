@@ -1,0 +1,2 @@
+condition,model,protocol,accuracy,auroc,sensitivity,specificity,n_train,n_dev,best_C,best_gamma
+depression,SVM-RBF,AVEC2017 Train/Dev,0.5714,0.5254,0.75,0.4783,107,35,1.0,scale

@@ -1,0 +1,3 @@
+gender,n,n_depressed,depression_rate,mean_phq8,auroc,sensitivity,specificity
+Female,19,7,0.3684,7.68,0.6071,0.8571,0.5833
+Male,16,5,0.3125,7.12,0.6545,1.0,0.3636

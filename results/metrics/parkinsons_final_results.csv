@@ -1,0 +1,2 @@
+condition,model,protocol,features,n_features,auroc,auroc_ci_lo,auroc_ci_hi,accuracy,sensitivity,specificity,permutation_p,significance
+parkinsons,RF-Nonlinear-Only,LOSO,"['RPDE', 'DFA', 'PPE', 'spread1', 'spread2', 'D2']",6,0.802,0.728,0.87,0.8103,0.9456,0.3958,0.0,***
