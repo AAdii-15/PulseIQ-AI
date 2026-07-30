@@ -1,0 +1,2 @@
+w2v_gender_auc,covarep_gender_auc,ratio,skip_0,skip_1,skip_2,skip_3,skip_5,skip_10,interpretation
+0.9869,0.9894,0.9976,0.4601,0.3804,0.3297,0.3478,0.3841,0.4638,no clear identity-leakage difference

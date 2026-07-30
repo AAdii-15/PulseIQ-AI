@@ -1,5 +1,15 @@
 # PulseIQ AI: Condition-Specific Acoustic Feature Attribution Across Parallel Voice Screening Tasks
+<p align="center">
+  <img src="results/figures/fig0_pipeline.png" width="900">
+</p>
 
+## Key Findings
+
+- Parkinson's Disease Detection: AUROC 0.802 under subject-independent LOSO evaluation.
+- COVID-19 Respiratory Screening: AUROC 0.758 on 5,238 Coswara recordings.
+- Depression (exploratory): AUROC 0.626; underpowered and non-significant.
+- PD-type nonlinear features contribute only 2.6% of depression-model SHAP attribution.
+- Cross-dataset transfer fails (AUROC 0.535), highlighting dataset-specific learning.
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -8,7 +18,9 @@ Official implementation of *Condition-Specific Acoustic Feature Attribution Acro
 Aditya Raj and Dr. Prashant Kumar. Department of Computer Science (AI/ML), Bennett University, Greater Noida, India.
 
 ## Overview
+### Why this work matters
 
+Most voice-biomarker studies evaluate a single condition in isolation. This work investigates whether classifiers trained for different health conditions rely on distinct acoustic information, a prerequisite for trustworthy multi-condition voice screening systems.
 PulseIQ AI applies one consistent evaluation methodology, in parallel, to three independent voice screening tasks: Parkinson's disease (UCI Parkinson's), COVID-19 respiratory screening (Coswara), and depression (DAIC-WOZ, AVEC 2017). Each task uses a separate dataset, subject population, and feature space. This is a parallel evaluation under a shared methodological framework, not simultaneous multi-condition screening from a single individual.
 
 The primary contribution is a within-recording feature attribution analysis. When PD-type nonlinear features, COVID-19-type MFCCs, and depression-specific COVAREP features are extracted from the same DAIC-WOZ recordings, the depression classifier assigns only 2.6% of its SHAP attribution to nonlinear features, which are the dominant predictor for Parkinson's disease. The result is stable across 200 bootstrap resamples (2.51 ± 1.15%, 95% CI [0.89, 5.25]).
@@ -60,7 +72,15 @@ When all three feature families are extracted from the same DAIC-WOZ recordings 
 - **Null results.** PHQ-8 symptom correlations yield zero significant findings under both Bonferroni and Benjamini-Hochberg correction.
 
 All within-dataset results are idealised upper bounds. The cross-dataset failure (0.535) indicates the models capture dataset-specific characteristics rather than generalisable disease signal. No result here should be read as clinically deployable performance.
+## Reproducibility Checklist
 
+- [x] Environment specification provided
+- [x] Evaluation protocols documented
+- [x] Statistical tests reported
+- [x] Bootstrap confidence intervals reported
+- [x] Dataset acquisition instructions provided
+- [x] Source code released
+- [ ] Pretrained model checkpoints distributed
 ## Installation
 
 ```bash

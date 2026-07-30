@@ -1,0 +1,7 @@
+condition,protocol,model,auroc,ci_lo,ci_hi,delong_z_vs_rf,delong_p_vs_rf
+parkinsons,LOSO,RandomForest,0.802,0.7277,0.8702,,
+parkinsons,LOSO,XGBoost,0.8151,0.7479,0.8783,-0.2792,0.7801
+parkinsons,LOSO,LightGBM,0.7928,0.7179,0.8604,0.2071,0.8359
+respiratory,5-Fold CV,RandomForest,0.7596,0.7457,0.7728,,
+respiratory,5-Fold CV,XGBoost,0.733,0.7185,0.7469,4.063,0.0
+respiratory,5-Fold CV,LightGBM,0.731,0.7163,0.7443,4.331,0.0

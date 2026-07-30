@@ -1,0 +1,4 @@
+condition,hl_chi2,dof,hl_p
+parkinsons,38.928,7,0.0
+respiratory,143.239,8,0.0
+depression,5.866,3,0.1183

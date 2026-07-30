@@ -1,0 +1,2 @@
+auroc_shared_only,mfcc_pct,nl_pct,nl_ci_lo,nl_ci_hi,verdict
+0.6576,77.86,12.4,7.11,19.31,PASSES: nonlinear stays low without COVAREP. Separability claim survives.

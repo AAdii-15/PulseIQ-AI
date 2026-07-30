@@ -1,38 +1,31 @@
-# Data
+# Consent forms / participant documents — NEVER commit
+*consent_form*
+*.wps
+
+# Personal working files, not repo content
+GRAPHICAL ABSTRACT
+GRAPHICAL ABSTRACT CAPTION.docx
+GRAPHICAL ABSTRACT TEXT.docx
+README_backup.md
+github_files.txt
+
+# Local backup artifacts from figure/script iteration
+*_OLD.png
+*_OLD2.png
+*_OLD.py
+*_OLD.csv
+results/figures/fig1_iconstyle_preview.png
+
+# Restricted/sensitive data — NEVER commit
 data/raw/
-*.wav
-*.mp3
-*.flac
+models/
+data/features/wav2vec_temporal/
 
-# Models
-models/*.pkl
-models/*.pt
-
-# Python
-__pycache__/
-*.pyc
-.pytest_cache/
-
-# Environments
-venv/
-.env
-
-# LaTeX
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.log
-paper/*.out
-paper/*.synctex.gz
-
-# OS
+# System/cache files
 .DS_Store
-*.swp
-data/features/wav2vec_temporal/
-*.npy
-data/features/wav2vec_temporal/
-*.npy
-data/features/wav2vec_temporal/
-*.npy
-data/features/wav2vec_temporal/
-*.npy
+**/.DS_Store
+__pycache__/
+**/__pycache__/
+
+# Stray duplicate
+graphical_abstract (1).png

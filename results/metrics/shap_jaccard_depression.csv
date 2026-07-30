@@ -1,0 +1,6 @@
+condition,top_k,jaccard_mean,jaccard_std,jaccard_min
+depression,3,0.0568,0.0986,0.0
+depression,5,0.0626,0.0772,0.0
+depression,10,0.1142,0.0784,0.0
+depression,15,0.1484,0.0726,0.0
+depression,20,0.1615,0.0681,0.0256

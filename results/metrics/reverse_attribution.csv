@@ -1,0 +1,2 @@
+uci_pd_loso_auc_5nl,dep_pdprob_mean,nondep_pdprob_mean,mw_u,mw_p,auc_pdprob_to_dep,verdict
+0.8,0.6147,0.6172,1824.5,0.1391,0.4344,PASSES: PD features in DAIC do not separate depression.

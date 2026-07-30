@@ -1,0 +1,2 @@
+n_dep,n_nondep,alpha,power,mde_auroc,observed_auroc,underpowered_by
+12,23,0.05,0.8,0.757,0.634,0.123

@@ -1,0 +1,2 @@
+condition,model,protocol,N,auroc,auroc_ci_lo,auroc_ci_hi,bacc,f1,sens,spec,brier,ece,youden_threshold
+depression,"COVAREP+SelectKBest(30,seeded)+RBF-SVM",AVEC2017 Official Dev Set,35,0.6087,0.4145,0.7949,0.6793,0.6,0.75,0.6087,0.2227,0.1284,0.2995

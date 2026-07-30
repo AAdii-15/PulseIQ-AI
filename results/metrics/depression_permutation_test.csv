@@ -1,0 +1,2 @@
+observed_auroc,null_mean,null_std,p_value,n_permutations,n_seeds
+0.6214,0.5015,0.1037,0.1255,2000,10
