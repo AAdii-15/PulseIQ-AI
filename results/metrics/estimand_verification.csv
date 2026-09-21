@@ -1,0 +1,3 @@
+condition,recording_level_auroc,aggregated_auroc,diff
+PD,0.802,0.8125,-0.0105
+COVID-19,0.702,0.7142,-0.0122

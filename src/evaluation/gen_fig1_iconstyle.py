@@ -160,7 +160,7 @@ ax.add_patch(FancyBboxPatch((12.05, 6.55), 2.55, 0.95,
              fill=True, fc='#FCECEA', ec=NL_C, lw=1.4, zorder=4))
 txt(ax, 13.32, 7.28, r'$AUROC = \frac{1}{n_1 n_2}\sum \mathbb{1}[f(x_i){>}f(x_j)]$',
     sz=8.3, c=NL_C)
-txt(ax, 13.32, 6.85, 'PD 0.802$^{***}$   \u00b7   COVID 0.758$^{***}$',
+txt(ax, 13.32, 6.85, 'PD 0.802$^{***}$   \u00b7   COVID 0.702$^{***}$',
     sz=8.6, w='bold', c=INK)
 
 # ── BOTTOM BRANCH: within-recording attribution ────────────────────────────────

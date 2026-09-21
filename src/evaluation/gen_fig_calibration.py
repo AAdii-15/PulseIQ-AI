@@ -78,14 +78,30 @@ y_prob_pk = cross_val_predict(make_rf(), Xp[NONLINEAR].values, yp.values,
 y_pk = yp.values
 bs_pk, e_pk = bootstrap_mean(y_pk, y_prob_pk)
 
-# ── COVID-19: 5-fold CV, bootstrap-mean (matches Table I exactly) ─────────────
-print('Recomputing COVID-19 (5-fold CV) probabilities...')
-Xr, yr, _ = load_respiratory()
-y_prob_resp = cross_val_predict(make_rf(), Xr.values, yr.values,
-                                 cv=StratifiedKFold(5, shuffle=True, random_state=42),
-                                 method='predict_proba')[:, 1]
-y_resp = yr.values
-bs_resp, e_resp = bootstrap_mean(y_resp, y_prob_resp)
+# ── COVID-19: participant-grouped 5-fold CV (matches corrected Table I) ───────
+print('Recomputing COVID-19 (participant-grouped 5-fold CV) probabilities...')
+import pandas as pd
+from sklearn.model_selection import StratifiedGroupKFold
+cdf = pd.read_csv(BASE / 'data/raw/coswara/voice_dataset_labeled_full.csv')
+covid_feat_cols = ['pitch', 'spectral_centroid', 'zcr', 'jitter', 'shimmer', 'hnr'] + [f'mfcc_{i}' for i in range(1, 14)]
+Xr = cdf[covid_feat_cols].values
+y_resp = cdf['label'].values
+covid_groups = cdf['user_id'].values
+y_prob_resp = cross_val_predict(make_rf(), Xr, y_resp,
+                                 cv=StratifiedGroupKFold(5, shuffle=True, random_state=42),
+                                 groups=covid_groups, method='predict_proba')[:, 1]
+# participant-level bootstrap, matching covid_final_corrected.py methodology
+unique_p = pd.unique(covid_groups)
+rng_c = __import__("numpy").random.default_rng(42)
+briers_c, eces_c = [], []
+for _ in range(2000):
+    boot_p = rng_c.choice(unique_p, size=len(unique_p), replace=True)
+    idx = __import__("numpy").concatenate([__import__("numpy").where(covid_groups == p)[0] for p in boot_p])
+    yb, pb = y_resp[idx], y_prob_resp[idx]
+    if len(set(yb)) < 2: continue
+    briers_c.append(brier_score_loss(yb, pb))
+    eces_c.append(ece(yb, pb))
+bs_resp, e_resp = __import__("numpy").mean(briers_c), __import__("numpy").mean(eces_c)
 
 # ── Depression: 10-seed mean of point estimates (matches Table I EXACTLY,
 #    same methodology as depression_final_v2.py, not a bootstrap mean) ────────

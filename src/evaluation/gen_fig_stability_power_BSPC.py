@@ -26,8 +26,8 @@ fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
 # ── Panel A: SHAP Jaccard stability comparison ────────────────────────────────
 ax = axes[0]
 conditions  = ["Parkinson's\n(PD)", "COVID-19\nRespiratory", "Depression\n(case study)"]
-jaccard_5   = [1.000, 1.000, 0.063]
-jaccard_10  = [1.000, 0.918, 0.114]
+jaccard_5   = [1.000, 0.474, 0.063]
+jaccard_10  = [1.000, 0.733, 0.114]
 colors_cond = ['#1565C0', '#2E7D32', '#B71C1C']
 x = np.arange(len(conditions)); w = 0.35
 
@@ -55,9 +55,12 @@ from matplotlib.patches import Patch
 legend_els = [Patch(facecolor='grey', alpha=0.9, label='Top-5 features'),
               Patch(facecolor='grey', alpha=0.5, hatch='//', label='Top-10 features')]
 ax.legend(handles=legend_els, fontsize=9, loc='upper right')
-ax.annotate('Noise\nfloor', xy=(2-w/2, 0.063), xytext=(1.35, 0.25),
+ax.annotate('below null\n(p=0.63)', xy=(2-w/2, 0.063), xytext=(1.35, 0.25),
             arrowprops=dict(arrowstyle='->', color='#B71C1C', lw=1.5),
             fontsize=9, color='#B71C1C', fontweight='bold')
+ax.annotate('vs. null: p=0.17\n(only 6 features)', xy=(0, 1.0), xytext=(-0.15, 1.10),
+            arrowprops=dict(arrowstyle='->', color='#1565C0', lw=1.3),
+            fontsize=8, color='#1565C0', fontweight='bold')
 
 # ── Panel B: Power analysis curve ─────────────────────────────────────────────
 ax = axes[1]

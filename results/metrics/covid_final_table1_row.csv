@@ -1,0 +1,2 @@
+condition,N,N_participants,auroc,auroc_ci_lo,auroc_ci_hi,bacc,f1,sens,brier,ece,youden_threshold
+respiratory_participant_grouped,5411,2709,0.702,0.6831,0.7209,0.653,0.6338,0.6232,0.2179,0.0272,0.488
